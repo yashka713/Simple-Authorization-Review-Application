@@ -1,8 +1,8 @@
 {
-  "name": "loftblog_angular_phonecat_app",
-  "description": "A starter project for AngularJS on LoftBlog",
-  "version": "0.0.2",
-  "homepage": "https://github.com/Severenit/loftblog_angular_phonecat_app",
+  "name": "angular-app",
+  "description": "A simple AngularJS App",
+  "version": "0.0.1",
+  "homepage": "https://github.com/yashka713/Simple-Authorization-Review-Application/",
   "license": "MIT",
   "private": true,
   "dependencies": {

@@ -1,9 +1,9 @@
 {
-  "name": "angular-phonecat",
+  "name": "angular-app",
   "private": true,
-  "version": "0.0.0",
-  "description": "A tutorial application for AngularJS",
-  "repository": "https://github.com/angular/angular-phonecat",
+  "version": "0.0.1",
+  "description": "A simple AngularJS App",
+  "repository": "https://github.com/yashka713/Simple-Authorization-Review-Application/",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",
