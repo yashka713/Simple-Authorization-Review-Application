@@ -1,0 +1,18 @@
+<div class="login-page" ng-show="showModal">
+    <div class="modalForm" >
+        <span class="close-btn" ng-click="setHideModal($event)">X</span>
+        <form class="register-form" novalidate ng-show="showLoginLink">
+            <input type="text"  placeholder="name" ng-model="user.username"/>
+            <input type="password" placeholder="password" ng-model="user.password"/>
+            <button ng-click="registration($event, user)">register</button>
+            <p class="message">Already registered? <a href="#/" ng-click="showRegisterForm($event)">Sign In</a></p>
+        </form>
+        <form class="login-form" novalidate ng-show="!showLoginLink">
+            <input type="text" placeholder="username" ng-model="user.username"/>
+            <input type="password" placeholder="password" ng-model="user.password"/>
+            <button ng-click="login($event, user)">login</button>
+            <p class="message">Not registered? <a href="#/" ng-click="showLoginForm($event)">Create an account</a></p>
+        </form>
+    </div>
+    <script src="../js/controllers.js"></script>
+</div><!-- /.login-page -->

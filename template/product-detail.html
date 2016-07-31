@@ -1,0 +1,69 @@
+<div class="row" novalidate>
+    <div class="product-title col-xs-12 col-sm-12">
+        <p>{{product.title}}</p>
+    </div>
+    <div class="left-panel col-xs-12 col-sm-6">
+        <div class="product-img">
+            <img ng-src="{{'http://smktesting.herokuapp.com/static/' + product.img}}" alt="{{product.title}}"/>
+        </div>
+        <div class="product-text">
+            <ul class="text-block col-xs-12 col-sm-12">
+                <li><span>Product Description:</span></li>
+                <li><p>{{product.text}}</p></li>
+            </ul>
+        </div>
+        <div class="myReview-form col-xs-12">
+            <form>
+                <label class="col-sm-12">Rate:</label>
+                <fieldset class="select-style col-sm-6">
+                    <select ng-model="myReview.rate">
+                        <option value>Rate the Product</option>
+                        <option value="0">{{arrStars[0]}}</option>
+                        <option value="1">{{arrStars[1]}}</option>
+                        <option value="2">{{arrStars[2]}}</option>
+                        <option value="3">{{arrStars[3]}}</option>
+                        <option value="4">{{arrStars[4]}}</option>
+                        <option value="5">{{arrStars[5]}}</option>
+                    </select>
+                </fieldset>
+                <fieldset class=" col-sm-6">
+                    <button class="button" style="vertical-align:middle" ng-click="sendReview($event, myReview)">
+                        <span>Add Review &nbsp</span>
+                    </button>
+                </fieldset>
+                <fieldset class="myReview-text col-sm-12">
+                <textarea class="form-control textarea-review"
+                          placeholder="Write a short review of the product..." ng-model="myReview.text">
+                </textarea>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="right-panel col-xs-12 col-sm-6">
+        <h3>Reviews:</h3>
+        <div class="reviewsList" ng-repeat="review in reviews | orderBy: '-created_at'">
+            <div class="reviewsList-wrapper">
+                <ul>
+                    <li class="reviewsList-author">
+                        <!--<span class="reviewsList-user">User: </span>-->
+                        <span class="reviewsList-user">{{review.created_by.username}}</span>
+                    </li>
+                    <li class="reviewsList-rate">
+                        <span>Rate: </span>
+                        <span>{{review.rate}}</span>
+                        <span class="reviewsList-star"></span>
+                        <span>({{arrStars[review.rate]}})</span>
+                    </li>
+                    <li class="reviewsList-text">
+                        <cite>{{review.text}}</cite>
+                    </li>
+
+                    <li class="reviewsList-time">
+                        <span>At: </span>
+                        <span ng-model="created_at">{{review.created_at | date: 'dd-MM-yyyy' + ' in ' + 'hh-mm' }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

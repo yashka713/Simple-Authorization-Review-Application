@@ -1,0 +1,16 @@
+<div class="row row-offcanvas row-offcanvas-right" >
+	<div class="col-xs-12 col-sm-8">
+		<p class="pull-right visible-xs">
+			<button type="button" class="btn btn-primary btn-xs setHide" data-toggle="offcanvas">Toggle nav</button>
+		</p>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-lg-4 item" ng-repeat="product in products">
+				<div class="preview-img text-center">
+					<img ng-src="{{'http://smktesting.herokuapp.com/static/' + product.img}}" alt="{{product.title}}"/>
+				</div>
+				<h2 class="product-title">{{product.title}}</h2>
+				<p><a class="btn btn-default" href="#/product/{{product.id}}" role="button">View details &raquo;</a></p>
+			</div><!--/.col-sm-6.col-lg-4-->
+		</div>
+	</div><!--/.col-xs-12.col-sm-8-->
+</div><!--/row-->
